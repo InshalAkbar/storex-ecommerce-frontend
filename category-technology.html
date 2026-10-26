@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="static-token">
+
+    <title>Technology — StoreX</title>
+
+    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    
+    <link rel="stylesheet" href="css/storex.css">
+
+    
+</head>
+
+<body class="storex-public-body">
+
+    <span data-nav-role="customer" style="display:contents">
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link  active " href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                        <a href="account/wishlist.html" class="storex-icon" title="Wishlist">
+                            ♡
+                            
+                                <span class="storex-icon-badge">3</span>
+                            
+                        </a>
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                        <a href="cart.html" class="storex-icon" title="Cart">
+                            🛒
+                            
+                                <span class="storex-icon-badge storex-cart-count">3</span>
+                            
+                        </a>
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    J
+                                
+                            </span>
+                            <span class="storex-user-name">John Doe</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>John Doe</strong>
+                                <small>john@example.com</small>
+                            </div>
+
+                            
+
+                                <a href="account/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="account/orders.html" class="storex-user-menu-item">
+                                    <span>▤</span> My Orders
+                                </a>
+
+                                <a href="account/wishlist.html" class="storex-user-menu-item">
+                                    <span>♡</span> Wishlist
+                                </a>
+
+                                <a href="account/addresses.html" class="storex-user-menu-item">
+                                    <span>⌂</span> Addresses
+                                </a>
+
+                                <a href="account/profile.html" class="storex-user-menu-item">
+                                    <span>◉</span> Profile Settings
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="register.html" class="storex-register-link">Register</a>
+                    <a href="login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span><span data-nav-role="vendor" style="display:contents" hidden>
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link  active " href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Nova Labs" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">
+                                
+                            </span>
+                            <span class="storex-user-name">Nova Labs</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>Nova Labs</strong>
+                                <small>nova@storex.com</small>
+                            </div>
+
+                            
+
+                                <a href="vendor/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="vendor/settings.html" class="storex-user-menu-item">
+                                    <span>◉</span> My Profile
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="register.html" class="storex-register-link">Register</a>
+                    <a href="login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span><span data-nav-role="admin" style="display:contents" hidden>
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link  active " href="categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    I
+                                
+                            </span>
+                            <span class="storex-user-name">Inshal Zahid</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>Inshal Zahid</strong>
+                                <small>admin@storex.com</small>
+                            </div>
+
+                            
+
+                                <a href="admin/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="admin/settings.html" class="storex-user-menu-item">
+                                    <span>◉</span> My Profile
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="register.html" class="storex-register-link">Register</a>
+                    <a href="login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span>
+
+    <main>
+        
+
+<section class="storex-category-detail">
+
+    
+    <div class="category-detail-hero">
+
+        <div class="category-detail-hero-image">
+            <img
+                src="images/categories/technology.jpg"
+                alt="Technology"
+            >
+        </div>
+
+        <div class="category-detail-hero-overlay"></div>
+
+        <div class="container">
+
+            <div class="category-detail-hero-content">
+
+                <div class="product-breadcrumb">
+                    <a href="index.html">Home</a>
+                    <span>/</span>
+                    <a href="categories.html">Categories</a>
+                    <span>/</span>
+                    <strong>Technology</strong>
+                </div>
+
+
+                <span class="section-label">CATEGORY</span>
+
+                <h1 class="category-detail-hero-title">
+                    Technology<span>.</span>
+                </h1>
+
+                <p class="category-detail-hero-description">
+                    Smart products for a smarter life. Discover cutting-edge tech from independent creators.
+                </p>
+
+
+                <div class="category-detail-stats">
+
+                    <div class="category-detail-stat">
+                        <strong>6</strong>
+                        <span>Products</span>
+                    </div>
+
+                    <div class="category-detail-stat">
+                        <strong>8</strong>
+                        <span>Vendors</span>
+                    </div>
+
+                    <div class="category-detail-stat">
+                        <strong>4.8</strong>
+                        <span>Avg Rating</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+    <div class="container">
+
+        <div class="category-toolbar">
+
+            <span class="products-count">
+                Showing <strong>6</strong> of 6 products
+            </span>
+
+            <div class="shop-sort">
+
+                <label for="sortProducts">Sort by</label>
+
+                <select id="sortProducts">
+                    <option value="featured">Featured</option>
+                    <option value="latest">Latest</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rating">Top Rated</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <div class="row g-4">
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-aero-wireless-headphones.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="1">♡</button>
+
+                            <img
+                                src="images/shop/Aero Wireless Headphones.jpg"
+                                alt="Aero Wireless Headphones"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Aero Wireless Headphones</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.9</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$129.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="1">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-pulse-smart-watch.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="5">♡</button>
+
+                            <img
+                                src="images/shop/Pulse Smart Watch.jpg"
+                                alt="Pulse Smart Watch"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Pulse Smart Watch</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.8</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$199.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="5">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-lumen-pro-speaker.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="9">♡</button>
+
+                            <img
+                                src="images/shop/Lumen Pro Speaker.jpg"
+                                alt="Lumen Pro Speaker"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Lumen Pro Speaker</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.9</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$249.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="9">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-orbit-bluetooth-speaker.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="13">♡</button>
+
+                            <img
+                                src="images/shop/Orbit Bluetooth Speaker.jpg"
+                                alt="Orbit Bluetooth Speaker"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Orbit Bluetooth Speaker</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.7</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$179.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="13">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-zenith-noise-cancelling-earbuds.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="17">♡</button>
+
+                            <img
+                                src="images/shop/Zenith Noise Cancelling Earbuds.jpg"
+                                alt="Zenith Noise Cancelling Earbuds"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Zenith Noise Cancelling Earbuds</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.9</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$299.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="17">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+                <div class="col-md-6 col-lg-4">
+
+                    <div class="product-card" data-product-url="product-flux-wireless-charger.html">
+
+                        <div class="product-image">
+
+                            
+                                <span class="product-badge">NEW</span>
+                            
+
+                            <button class="product-wishlist wishlist-toggle-btn" type="button" data-product-id="21">♡</button>
+
+                            <img
+                                src="images/shop/Flux Wireless Charger.jpg"
+                                alt="Flux Wireless Charger"
+                                class="product-real-image"
+                            >
+
+                        </div>
+
+
+                        <div class="product-info">
+
+                            <span class="product-category">
+                                TECHNOLOGY
+                            </span>
+
+                            <h3>Flux Wireless Charger</h3>
+
+                            <div class="product-rating">
+                                <span>★★★★★</span>
+                                <small>4.7</small>
+                            </div>
+
+                            <div class="product-bottom">
+                                <strong>$159.00</strong>
+                                <button class="product-cart add-to-cart-btn" type="button" data-product-id="21">+</button>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            
+
+        </div>
+
+
+        
+        
+
+    </div>
+
+</section>
+
+
+    </main>
+
+    <footer class="storex-footer">
+
+    
+
+
+    <!-- MAIN FOOTER -->
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="footer-logo">
+                    STORE<span>X</span>
+                </a>
+
+                <p>
+                    A marketplace built for people who don't
+                    just shop, but discover things worth having.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="X">X</a>
+                    <a href="#" aria-label="LinkedIn">IN</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Marketplace</h4>
+
+                <a href="shop.html">Shop</a>
+                <a href="categories.html">Categories</a>
+                <a href="shop.html">Featured Products</a>
+                <a href="shop.html">New Arrivals</a>
+                <a href="vendors.html">Vendors</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Discover</h4>
+
+                <a href="vendors.html">Vendors</a>
+                <a href="shop.html">Trending</a>
+                <a href="categories.html">Collections</a>
+                <a href="shop.html">Best Sellers</a>
+                <a href="shop.html">StoreX Picks</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="about.html">About StoreX</a>
+                <a href="contact.html">Contact</a>
+                <a href="contact.html">Become a Vendor</a>
+                <a href="contact.html">Help Center</a>
+                <a href="about.html">Privacy</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>© 2026 StoreX. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+
+                <a href="about.html">Terms</a>
+                <a href="about.html">Privacy</a>
+                <a href="about.html">Cookies</a>
+
+            </div>
+
+            <span class="footer-location">
+                Built for the next generation.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    
+    
+
+<div class="storex-chat-widget" id="storexChatWidget">
+
+    
+    <button type="button" class="storex-chat-btn" id="storexChatBtn">
+
+        <span class="storex-chat-icon">
+            💬
+        </span>
+
+        <span class="storex-chat-label">
+            Chat with us
+        </span>
+
+    </button>
+
+
+    
+    <div class="storex-chat-modal" id="storexChatModal">
+
+        <div class="storex-chat-modal-header">
+
+            <div>
+
+                <strong>
+                    StoreX Support
+                </strong>
+
+                <small>
+                    🟢 Online — usually replies instantly
+                </small>
+
+            </div>
+
+            <button type="button" class="storex-chat-close" id="storexChatClose">
+                ✕
+            </button>
+
+        </div>
+
+
+        <div class="storex-chat-modal-body">
+
+            <div class="storex-chat-message storex-chat-message-bot">
+
+                <span>
+                    👋 Hi there! How can we help you today?
+                </span>
+
+            </div>
+
+
+            <div class="storex-chat-message storex-chat-message-bot">
+
+                <span>
+                    You can ask about orders, shipping, returns,
+                    payment, products or anything else!
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="storex-chat-modal-footer">
+
+            <input
+                type="text"
+                id="storexChatInput"
+                placeholder="Type your message..."
+                autocomplete="off"
+            >
+
+            <button type="button" id="storexChatSend">
+                ➤
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+    
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    
+    <script
+        src="https://code.jquery.com/jquery-3.7.1.min.js">
+    </script>
+
+    
+    <script>
+        window.csrfToken = "static-token";
+    </script>
+
+    
+    <script src="js/storex-data.js"></script>
+    <script src="js/storex-static.js"></script>
+    <script src="js/storex.js"></script>
+
+    
+
+</body>
+</html>

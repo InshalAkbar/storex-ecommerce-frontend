@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="static-token">
+
+    <title>Orders — StoreX Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/storex.css">
+
+    
+</head>
+
+<body class="admin-body">
+
+<div class="admin-layout">
+
+    
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="admin-sidebar-inner">
+
+            
+          <a href="../admin/index.html" class="admin-logo">
+    <div>
+        <strong>StoreX</strong>
+        <small>Admin Panel</small>
+    </div>
+</a>
+
+
+            
+            <nav class="admin-nav">
+
+                <span class="admin-nav-label">DASHBOARD</span>
+
+                <a href="../admin/index.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </span>
+                    Overview
+                </a>
+
+                <a href="../admin/users.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+                    Users
+                    
+                </a>
+
+                <a href="../admin/vendors.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/><path d="M9 22V12h6v10"/></svg>
+                    </span>
+                    Vendors
+                </a>
+
+                <a href="../admin/products.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </span>
+                    Products
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link  active ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </span>
+                    Orders
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </span>
+                    Categories
+                </a>
+
+
+                <span class="admin-nav-label">INSIGHTS</span>
+
+                <a href="../admin/reports.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    Reports
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </span>
+                    Settings
+                </a>
+
+            </nav>
+
+
+            
+            <div class="admin-sidebar-footer">
+
+                <a href="../index.html" class="admin-nav-link">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    </span>
+                    Back to Store
+                </a>
+
+                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                    
+                    <button type="submit" class="admin-nav-link admin-nav-logout" style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                        <span class="admin-nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        </span>
+                        Logout
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    
+    <main class="admin-main">
+
+        
+        <header class="admin-topbar">
+
+            <button type="button" class="admin-menu-toggle" id="adminMenuToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <div class="admin-topbar-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search users, orders, vendors...">
+            </div>
+
+            <div class="admin-topbar-actions">
+
+                <button type="button" class="admin-topbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </button>
+
+                <button type="button" class="admin-topbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </button>
+
+                <div class="admin-topbar-user">
+                    <div class="admin-topbar-avatar">
+                        
+                            I
+                        
+                    </div>
+                    <div class="admin-topbar-user-info">
+                        <strong>Inshal Zahid</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        
+        <div class="admin-content">
+            
+
+<div class="admin-page-header">
+    <div>
+        <h1>All Orders</h1>
+        <p>Change order status from dropdown — only admin can do this</p>
+    </div>
+</div>
+
+
+
+<form style="margin-bottom: 25px; display: flex; align-items: center; gap: 15px; flex-wrap: wrap;" data-static="1" data-action="../admin/orders.html" data-method="GET">
+
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+        <a href="../admin/orders.html" class="dashboard-filter  dashboard-filter-active ">All</a>
+        <a href="../admin/orders.html" class="dashboard-filter ">Pending</a>
+        <a href="../admin/orders.html" class="dashboard-filter ">Processing</a>
+        <a href="../admin/orders.html" class="dashboard-filter ">Shipped</a>
+        <a href="../admin/orders.html" class="dashboard-filter ">Delivered</a>
+        <a href="../admin/orders.html" class="dashboard-filter ">Cancelled</a>
+    </div>
+
+    <div style="flex: 1; max-width: 350px; display: flex; gap: 8px;">
+        <input
+            type="text"
+            name="search"
+            placeholder="Search by order number..."
+            value=""
+            style="flex: 1; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; background: rgba(255,255,255,0.03); color: #fff; outline: none;"
+        >
+        <button type="submit" style="padding: 10px 18px; border: none; border-radius: 10px; background: #7c3aed; color: #fff; font-weight: 700; cursor: pointer;">
+            Search
+        </button>
+    </div>
+
+    
+
+</form>
+
+
+
+<div class="admin-block admin-block-full">
+    <div class="admin-table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Order</th>
+                    <th>Customer</th>
+                    <th>Items</th>
+                    <th>Total</th>
+                    <th>Payment</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1176</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        SA
+                                    
+                                </div>
+                                <div>
+                                    <strong>Sarah M.</strong>
+                                    <small>sarah@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td><strong>$214.92</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">cod</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="3" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending"  selected >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered" >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Oct 19, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1154</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        OL
+                                    
+                                </div>
+                                <div>
+                                    <strong>Olivia Brown</strong>
+                                    <small>olivia@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td><strong>$192.24</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">card</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="6" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing"  selected >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered" >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Oct 18, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1187</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        JO
+                                    
+                                </div>
+                                <div>
+                                    <strong>John Doe</strong>
+                                    <small>john@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td><strong>$331.56</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">card</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="1" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped"  selected >Shipped</option>
+                                <option value="delivered" >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Oct 16, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1182</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        JO
+                                    
+                                </div>
+                                <div>
+                                    <strong>John Doe</strong>
+                                    <small>john@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td><strong>$230.04</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">paypal</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="2" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered"  selected >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Sep 28, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1169</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        EM
+                                    
+                                </div>
+                                <div>
+                                    <strong>Emma Wilson</strong>
+                                    <small>emma@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td><strong>$397.44</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">card</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="4" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered"  selected >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Aug 21, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1161</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        LI
+                                    
+                                </div>
+                                <div>
+                                    <strong>Liam Carter</strong>
+                                    <small>liam@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td><strong>$96.12</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">paypal</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="5" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered"  selected >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Aug 09, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1148</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        NO
+                                    
+                                </div>
+                                <div>
+                                    <strong>Noah Davis</strong>
+                                    <small>noah@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>1</td>
+                        <td><strong>$193.32</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">card</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="7" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered" >Delivered</option>
+                                <option value="cancelled"  selected >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Aug 02, 2026</td>
+                    </tr>
+                
+                    <tr>
+                        <td><strong>#STX-2024-1140</strong></td>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="overflow: hidden;">
+                                    
+                                        JO
+                                    
+                                </div>
+                                <div>
+                                    <strong>John Doe</strong>
+                                    <small>john@example.com</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>2</td>
+                        <td><strong>$311.04</strong></td>
+                        <td><span style="color:#94a3b8;font-size:0.8rem;text-transform:uppercase;">cod</span></td>
+                        <td>
+                            <select class="admin-order-status-select" data-order-id="8" data-order-url="#admin.orders.status" style="padding:6px 10px;border-radius:8px;border:1px solid rgba(255,255,255,0.12);background:#0f172a;color:#fff;font-size:0.8rem;cursor:pointer;">
+                                <option value="pending" >Pending</option>
+                                <option value="processing" >Processing</option>
+                                <option value="shipped" >Shipped</option>
+                                <option value="delivered"  selected >Delivered</option>
+                                <option value="cancelled" >Cancelled</option>
+                            </select>
+                        </td>
+                        <td>Jul 25, 2026</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 20px;">
+        
+    </div>
+</div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<div class="admin-overlay" id="adminOverlay"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>window.csrfToken = "static-token";</script>
+<script src="../js/storex-data.js"></script>
+    <script src="../js/storex-static.js"></script>
+    <script src="../js/storex.js"></script>
+
+<script>
+    // Admin sidebar toggle
+    document.getElementById('adminMenuToggle')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar')?.classList.toggle('admin-sidebar-open');
+        document.getElementById('adminOverlay')?.classList.toggle('admin-overlay-show');
+    });
+    document.getElementById('adminOverlay')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar')?.classList.remove('admin-sidebar-open');
+        document.getElementById('adminOverlay')?.classList.remove('admin-overlay-show');
+    });
+</script>
+
+
+
+</body>
+</html>

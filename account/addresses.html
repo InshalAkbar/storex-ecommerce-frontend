@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="static-token">
+
+    <title>Addresses — StoreX</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/storex.css">
+
+    
+</head>
+
+<body class="storex-public-body">
+
+    
+    <span data-nav-role="customer" style="display:contents">
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="../index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="../shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link " href="../categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="../vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                        <a href="../account/wishlist.html" class="storex-icon" title="Wishlist">
+                            ♡
+                            
+                                <span class="storex-icon-badge">3</span>
+                            
+                        </a>
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                        <a href="../cart.html" class="storex-icon" title="Cart">
+                            🛒
+                            
+                                <span class="storex-icon-badge storex-cart-count">3</span>
+                            
+                        </a>
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    J
+                                
+                            </span>
+                            <span class="storex-user-name">John Doe</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>John Doe</strong>
+                                <small>john@example.com</small>
+                            </div>
+
+                            
+
+                                <a href="../account/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="../account/orders.html" class="storex-user-menu-item">
+                                    <span>▤</span> My Orders
+                                </a>
+
+                                <a href="../account/wishlist.html" class="storex-user-menu-item">
+                                    <span>♡</span> Wishlist
+                                </a>
+
+                                <a href="../account/addresses.html" class="storex-user-menu-item">
+                                    <span>⌂</span> Addresses
+                                </a>
+
+                                <a href="../account/profile.html" class="storex-user-menu-item">
+                                    <span>◉</span> Profile Settings
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="../register.html" class="storex-register-link">Register</a>
+                    <a href="../login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span><span data-nav-role="vendor" style="display:contents" hidden>
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="../index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="../shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link " href="../categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="../vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&amp;fit=crop&amp;w=1800&amp;q=85" alt="Nova Labs" style="width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;">
+                                
+                            </span>
+                            <span class="storex-user-name">Nova Labs</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>Nova Labs</strong>
+                                <small>nova@storex.com</small>
+                            </div>
+
+                            
+
+                                <a href="../vendor/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="../vendor/settings.html" class="storex-user-menu-item">
+                                    <span>◉</span> My Profile
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="../register.html" class="storex-register-link">Register</a>
+                    <a href="../login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span><span data-nav-role="admin" style="display:contents" hidden>
+
+<nav class="navbar navbar-expand-lg storex-navbar" id="storexNavbarMain">
+    <div class="container">
+
+        <a class="navbar-brand storex-logo" href="../index.html">
+            STORE<span>X</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#storexNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="storexNavbar">
+
+            <ul class="navbar-nav mx-auto gap-lg-3">
+                <li class="nav-item"><a class="nav-link " href="../index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link " href="../shop.html">Shop</a></li>
+                <li class="nav-item"><a class="nav-link " href="../categories.html">Categories</a></li>
+                <li class="nav-item"><a class="nav-link " href="../vendors.html">Vendors</a></li>
+                <li class="nav-item"><a class="nav-link " href="../about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link " href="../contact.html">Contact</a></li>
+            </ul>
+
+            <div class="d-flex align-items-center gap-3">
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Wishlist">♡</a>
+                </span>
+
+                
+                <span data-auth="user" hidden style="display:contents">
+                    
+                </span><span data-auth="guest" style="display:contents">
+                    <a href="../login.html" class="storex-icon" title="Cart">🛒</a>
+                </span>
+
+
+                
+                <span data-auth="user" hidden style="display:contents">
+
+                    <div class="storex-user-dropdown" id="storexUserDropdown">
+
+                        <button type="button" class="storex-user-btn" id="storexUserBtn">
+                            <span class="storex-user-avatar">
+                                
+                                    I
+                                
+                            </span>
+                            <span class="storex-user-name">Inshal Zahid</span>
+                            <span class="storex-user-caret">▾</span>
+                        </button>
+
+                        <div class="storex-user-menu" id="storexUserMenu">
+
+                            <div class="storex-user-menu-header">
+                                <strong>Inshal Zahid</strong>
+                                <small>admin@storex.com</small>
+                            </div>
+
+                            
+
+                                <a href="../admin/index.html" class="storex-user-menu-item">
+                                    <span>◈</span> Dashboard
+                                </a>
+
+                                <a href="../admin/settings.html" class="storex-user-menu-item">
+                                    <span>◉</span> My Profile
+                                </a>
+
+                                <div class="storex-user-menu-divider"></div>
+
+                                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                                    
+                                    <button type="submit" class="storex-user-menu-item storex-user-menu-logout"
+                                        style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                                        <span>⏻</span> Logout
+                                    </button>
+                                </form>
+
+                            
+
+                        </div>
+
+                    </div>
+
+                </span><span data-auth="guest" style="display:contents">
+
+                    <a href="../register.html" class="storex-register-link">Register</a>
+                    <a href="../login.html" class="storex-login">Login</a>
+
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</nav></span>
+
+    <main>
+        
+
+<section class="storex-shop" style="padding-top: 130px; padding-bottom: 80px;">
+    <div class="container">
+
+        <div class="shop-header" style="margin-bottom: 40px;">
+            <div>
+                <span class="section-label">ADDRESSES</span>
+                <h1 class="shop-title" style="font-size: 3rem;">Saved <span>addresses.</span></h1>
+                <p class="shop-description">Manage your shipping and billing addresses.</p>
+            </div>
+        </div>
+
+        
+
+        <div class="dashboard-addresses">
+
+            
+                <div class="dashboard-address-card  dashboard-address-default ">
+                    <div class="dashboard-address-header">
+                        
+                            <span class="dashboard-address-badge">DEFAULT</span>
+                        
+                    </div>
+                    <div class="dashboard-address-info">
+                        <strong>John Doe</strong>
+                        <p>
+                            123 Main Street, Apt 4B<br>
+                            New York, NY 10001<br>
+                            United States
+                        </p>
+                        <small>+1 (555) 000-0000</small>
+                    </div>
+                </div>
+            
+                <div class="dashboard-address-card ">
+                    <div class="dashboard-address-header">
+                        
+                            <span class="dashboard-address-badge dashboard-address-badge-secondary">HOME</span>
+                        
+                    </div>
+                    <div class="dashboard-address-info">
+                        <strong>John Doe</strong>
+                        <p>
+                            456 Oak Avenue, Suite 12<br>
+                            Brooklyn, NY 11201<br>
+                            United States
+                        </p>
+                        <small>+1 (555) 111-1111</small>
+                    </div>
+                </div>
+            
+
+        </div>
+
+        
+        <div class="dashboard-block" style="margin-top: 30px;">
+            <div class="dashboard-block-header">
+                <div>
+                    <h2 class="dashboard-block-title">Add New Address</h2>
+                    <p class="dashboard-block-subtitle">Fill in the details below.</p>
+                </div>
+            </div>
+
+            <form data-static="1" data-action="dashboard.addresses.store" data-method="POST">
+                
+
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="checkout-field">
+                            <label>Label</label>
+                            <select name="label" required>
+                                <option value="home">Home</option>
+                                <option value="office">Office</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="checkout-field">
+                            <label>Full Name</label>
+                            <input type="text" name="name" value="John Doe" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="checkout-field">
+                            <label>Phone</label>
+                            <input type="text" name="phone" placeholder="+1 (555) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="checkout-field">
+                            <label>Country</label>
+                            <input type="text" name="country" value="United States" required>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="checkout-field">
+                            <label>Street Address</label>
+                            <input type="text" name="address" placeholder="123 Main Street, Apt 4B" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="checkout-field">
+                            <label>City</label>
+                            <input type="text" name="city" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="checkout-field">
+                            <label>State</label>
+                            <input type="text" name="state" required>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="checkout-field">
+                            <label>ZIP Code</label>
+                            <input type="text" name="zip" required>
+                        </div>
+                    </div>
+
+                    <div class="col-12">
+                        <label class="auth-checkbox" style="display:flex; align-items:center; gap:10px;">
+                            <input type="checkbox" name="is_default" value="1">
+                            <span>Set as default address</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="dashboard-form-actions" style="margin-top: 25px;">
+                    <button type="submit" class="btn-storex">
+                        Save Address <span>→</span>
+                    </button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+
+    </main>
+
+    
+    <footer class="storex-footer">
+
+    
+
+
+    <!-- MAIN FOOTER -->
+
+    <div class="container">
+
+        <div class="footer-main">
+
+            <div class="footer-brand">
+
+                <a href="../index.html" class="footer-logo">
+                    STORE<span>X</span>
+                </a>
+
+                <p>
+                    A marketplace built for people who don't
+                    just shop, but discover things worth having.
+                </p>
+
+                <div class="footer-socials">
+
+                    <a href="#" aria-label="Instagram">IG</a>
+                    <a href="#" aria-label="Facebook">FB</a>
+                    <a href="#" aria-label="X">X</a>
+                    <a href="#" aria-label="LinkedIn">IN</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Marketplace</h4>
+
+                <a href="../shop.html">Shop</a>
+                <a href="../categories.html">Categories</a>
+                <a href="../shop.html">Featured Products</a>
+                <a href="../shop.html">New Arrivals</a>
+                <a href="../vendors.html">Vendors</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Discover</h4>
+
+                <a href="../vendors.html">Vendors</a>
+                <a href="../shop.html">Trending</a>
+                <a href="../categories.html">Collections</a>
+                <a href="../shop.html">Best Sellers</a>
+                <a href="../shop.html">StoreX Picks</a>
+
+            </div>
+
+
+            <div class="footer-column">
+
+                <h4>Company</h4>
+
+                <a href="../about.html">About StoreX</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../contact.html">Become a Vendor</a>
+                <a href="../contact.html">Help Center</a>
+                <a href="../about.html">Privacy</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>© 2026 StoreX. All rights reserved.</p>
+
+            <div class="footer-bottom-links">
+
+                <a href="../about.html">Terms</a>
+                <a href="../about.html">Privacy</a>
+                <a href="../about.html">Cookies</a>
+
+            </div>
+
+            <span class="footer-location">
+                Built for the next generation.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script>window.csrfToken = "static-token";</script>
+    <script src="../js/storex-data.js"></script>
+    <script src="../js/storex-static.js"></script>
+    <script src="../js/storex.js"></script>
+
+    
+
+</body>
+</html>

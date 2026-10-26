@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="static-token">
+
+    <title>Products — StoreX Admin</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/storex.css">
+
+    
+</head>
+
+<body class="admin-body">
+
+<div class="admin-layout">
+
+    
+    <aside class="admin-sidebar" id="adminSidebar">
+
+        <div class="admin-sidebar-inner">
+
+            
+          <a href="../admin/index.html" class="admin-logo">
+    <div>
+        <strong>StoreX</strong>
+        <small>Admin Panel</small>
+    </div>
+</a>
+
+
+            
+            <nav class="admin-nav">
+
+                <span class="admin-nav-label">DASHBOARD</span>
+
+                <a href="../admin/index.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                    </span>
+                    Overview
+                </a>
+
+                <a href="../admin/users.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </span>
+                    Users
+                    
+                </a>
+
+                <a href="../admin/vendors.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9"/><path d="M9 22V12h6v10"/></svg>
+                    </span>
+                    Vendors
+                </a>
+
+                <a href="../admin/products.html" class="admin-nav-link  active ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+                    </span>
+                    Products
+                </a>
+
+                <a href="../admin/orders.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+                    </span>
+                    Orders
+                </a>
+
+                <a href="../admin/categories.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                    </span>
+                    Categories
+                </a>
+
+
+                <span class="admin-nav-label">INSIGHTS</span>
+
+                <a href="../admin/reports.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    </span>
+                    Reports
+                </a>
+
+                <a href="../admin/settings.html" class="admin-nav-link ">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                    </span>
+                    Settings
+                </a>
+
+            </nav>
+
+
+            
+            <div class="admin-sidebar-footer">
+
+                <a href="../index.html" class="admin-nav-link">
+                    <span class="admin-nav-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                    </span>
+                    Back to Store
+                </a>
+
+                <form style="margin: 0;" data-static="1" data-action="logout" data-method="POST">
+                    
+                    <button type="submit" class="admin-nav-link admin-nav-logout" style="width: 100%; background: transparent; border: none; text-align: left; cursor: pointer;">
+                        <span class="admin-nav-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                        </span>
+                        Logout
+                    </button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    
+    <main class="admin-main">
+
+        
+        <header class="admin-topbar">
+
+            <button type="button" class="admin-menu-toggle" id="adminMenuToggle">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+            </button>
+
+            <div class="admin-topbar-search">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                <input type="text" placeholder="Search users, orders, vendors...">
+            </div>
+
+            <div class="admin-topbar-actions">
+
+                <button type="button" class="admin-topbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                </button>
+
+                <button type="button" class="admin-topbar-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </button>
+
+                <div class="admin-topbar-user">
+                    <div class="admin-topbar-avatar">
+                        
+                            I
+                        
+                    </div>
+                    <div class="admin-topbar-user-info">
+                        <strong>Inshal Zahid</strong>
+                        <small>Administrator</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        
+        <div class="admin-content">
+            
+
+<div class="admin-page-header">
+    <div>
+        <h1>All Products</h1>
+        <p>Every product listed on the StoreX marketplace</p>
+    </div>
+
+    <a href="#" class="vendor-btn-primary" onclick="alert('Add Product feature coming soon — vendors products add karte hain, admin manage karta hai'); return false;">
+        + Add Product
+    </a>
+</div>
+
+
+
+<div class="admin-stats-grid">
+
+    <div class="admin-stat-box admin-stat-box-purple">
+        <div class="admin-stat-top"><span class="admin-stat-label">Total Products</span></div>
+        <div class="admin-stat-value">24</div>
+    </div>
+
+    <div class="admin-stat-box admin-stat-box-teal">
+        <div class="admin-stat-top"><span class="admin-stat-label">Active</span></div>
+        <div class="admin-stat-value">0</div>
+    </div>
+
+    <div class="admin-stat-box admin-stat-box-pink">
+        <div class="admin-stat-top"><span class="admin-stat-label">Low Stock</span></div>
+        <div class="admin-stat-value">0</div>
+    </div>
+
+    <div class="admin-stat-box admin-stat-box-amber">
+        <div class="admin-stat-top"><span class="admin-stat-label">Out of Stock</span></div>
+        <div class="admin-stat-value">0</div>
+    </div>
+
+</div>
+
+
+
+<form style="margin-bottom: 25px; display: flex; gap: 10px; max-width: 450px;" data-static="1" data-action="../admin/products.html" data-method="GET">
+    <input
+        type="text"
+        name="search"
+        placeholder="Search products by name or SKU..."
+        value=""
+        style="flex: 1; padding: 10px 16px; border: 1px solid rgba(255,255,255,0.08); border-radius: 10px; background: rgba(255,255,255,0.03); color: #fff; outline: none;"
+    >
+    <button type="submit" style="padding: 10px 20px; border: none; border-radius: 10px; background: #7c3aed; color: #fff; font-weight: 700; cursor: pointer;">
+        Search
+    </button>
+    
+</form>
+
+
+
+<div class="admin-block admin-block-full">
+    <div class="admin-table-wrap">
+        <table class="admin-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Vendor</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                    <th>Stock</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Vega Travel Backpack.jpg" alt="Vega Travel Backpack" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Vega Travel Backpack</strong>
+                                    <small>SKU: VEG-TB-024</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Accessories</td>
+                        <td><strong>$199.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                35
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Echo Aroma Diffuser.jpg" alt="Echo Aroma Diffuser" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Echo Aroma Diffuser</strong>
+                                    <small>SKU: ECH-AD-023</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$69.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                90
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Mira Linen Shirt.jpg" alt="Mira Linen Shirt" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Mira Linen Shirt</strong>
+                                    <small>SKU: MIR-LS-022</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$189.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                28
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Flux Wireless Charger.jpg" alt="Flux Wireless Charger" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Flux Wireless Charger</strong>
+                                    <small>SKU: FLX-WC-021</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$159.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                70
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Lune Silk Scarf.jpg" alt="Lune Silk Scarf" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Lune Silk Scarf</strong>
+                                    <small>SKU: LUN-SS-020</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Accessories</td>
+                        <td><strong>$129.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                65
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Haven Accent Chair.jpg" alt="Haven Accent Chair" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Haven Accent Chair</strong>
+                                    <small>SKU: HAV-AC-019</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$189.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                12
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Rust Denim Jacket.jpg" alt="Rust Denim Jacket" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Rust Denim Jacket</strong>
+                                    <small>SKU: RUS-DJ-018</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$99.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                55
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Zenith Noise Cancelling Earbuds.jpg" alt="Zenith Noise Cancelling Earbuds" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Zenith Noise Cancelling Earbuds</strong>
+                                    <small>SKU: ZEN-NC-017</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$299.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                30
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Atlas Laptop Sleeve.jpg" alt="Atlas Laptop Sleeve" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Atlas Laptop Sleeve</strong>
+                                    <small>SKU: ATL-LS-016</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Accessories</td>
+                        <td><strong>$219.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                15
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Terra Ceramic Vase.jpg" alt="Terra Ceramic Vase" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Terra Ceramic Vase</strong>
+                                    <small>SKU: TER-CV-015</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$119.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                40
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Cashmere Wrap Coat.jpg" alt="Cashmere Wrap Coat" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Cashmere Wrap Coat</strong>
+                                    <small>SKU: CSH-WC-014</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$159.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                22
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Orbit Bluetooth Speaker.jpg" alt="Orbit Bluetooth Speaker" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Orbit Bluetooth Speaker</strong>
+                                    <small>SKU: ORB-BS-013</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$179.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                45
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Nomad Card Holder.jpg" alt="Nomad Card Holder" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Nomad Card Holder</strong>
+                                    <small>SKU: NOM-CH-012</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Accessories</td>
+                        <td><strong>$99.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                80
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Cove Wall Sconce.jpg" alt="Cove Wall Sconce" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Cove Wall Sconce</strong>
+                                    <small>SKU: COV-WS-011</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$89.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                35
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Sienna Knit Sweater.jpg" alt="Sienna Knit Sweater" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Sienna Knit Sweater</strong>
+                                    <small>SKU: SIE-KS-010</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$139.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                40
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Lumen Pro Speaker.jpg" alt="Lumen Pro Speaker" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Lumen Pro Speaker</strong>
+                                    <small>SKU: LUM-PS-009</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$249.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                25
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Metro Leather Carryall.jpg" alt="Metro Leather Carryall" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Metro Leather Carryall</strong>
+                                    <small>SKU: MET-LC-008</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Accessories</td>
+                        <td><strong>$179.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                18
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Aura Desk Light.jpg" alt="Aura Desk Light" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Aura Desk Light</strong>
+                                    <small>SKU: AUR-DL-007</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Form &amp; Home</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$79.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                50
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Urban Essential Coat.jpg" alt="Urban Essential Coat" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Urban Essential Coat</strong>
+                                    <small>SKU: URB-EC-006</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$119.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                30
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Pulse Smart Watch.jpg" alt="Pulse Smart Watch" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Pulse Smart Watch</strong>
+                                    <small>SKU: PLS-SW-005</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$199.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                65
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Studio Leather Bag.jpg" alt="Studio Leather Bag" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Studio Leather Bag</strong>
+                                    <small>SKU: STD-LB-004</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Accessories</td>
+                        <td><strong>$149.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                22
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Vertex Smart Lamp.jpg" alt="Vertex Smart Lamp" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Vertex Smart Lamp</strong>
+                                    <small>SKU: VTX-SL-003</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Lifestyle</td>
+                        <td><strong>$64.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                32
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Nova Essential Jacket.jpg" alt="Nova Essential Jacket" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Nova Essential Jacket</strong>
+                                    <small>SKU: NVA-EJ-002</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Atelier 09</td>
+                        <td>Fashion</td>
+                        <td><strong>$89.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                45
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+                    <tr>
+                        <td>
+                            <div class="admin-user-cell">
+                                <div class="admin-user-avatar" style="border-radius: 8px;">
+                                    <img src="../images/shop/Aero Wireless Headphones.jpg" alt="Aero Wireless Headphones" style="width:100%;height:100%;object-fit:cover;display:block;">
+                                </div>
+                                <div>
+                                    <strong>Aero Wireless Headphones</strong>
+                                    <small>SKU: AERO-WH-001</small>
+                                </div>
+                            </div>
+                        </td>
+                        <td>Nova Labs</td>
+                        <td>Technology</td>
+                        <td><strong>$129.00</strong></td>
+                        <td>
+                            <span class="admin-status admin-status-delivered">
+                                124
+                            </span>
+                        </td>
+                        <td>
+                            <span class="admin-status admin-status-pending">
+                                
+                            </span>
+                        </td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+    <div style="margin-top: 20px;">
+        
+    </div>
+</div>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<div class="admin-overlay" id="adminOverlay"></div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script>window.csrfToken = "static-token";</script>
+<script src="../js/storex-data.js"></script>
+    <script src="../js/storex-static.js"></script>
+    <script src="../js/storex.js"></script>
+
+<script>
+    // Admin sidebar toggle
+    document.getElementById('adminMenuToggle')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar')?.classList.toggle('admin-sidebar-open');
+        document.getElementById('adminOverlay')?.classList.toggle('admin-overlay-show');
+    });
+    document.getElementById('adminOverlay')?.addEventListener('click', function() {
+        document.getElementById('adminSidebar')?.classList.remove('admin-sidebar-open');
+        document.getElementById('adminOverlay')?.classList.remove('admin-overlay-show');
+    });
+</script>
+
+
+
+</body>
+</html>
